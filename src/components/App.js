@@ -19,7 +19,16 @@ const [friends, setFriends] = useState(friendsData);
 const [searchItem, setSearchItem] = useState("");
   // 👉 5- Build a `changeStatus` function that takes an id and
   // changes the `married` from true to false and viceversa
-
+const changeStatus = (id) => {
+  const updatedFriends = friends.map(fr => {
+    if (fr.id === id){
+      return {...fr, married: !fr.married };
+    }else {
+      return fr;
+    }
+  })
+  setFriends(updatedFriends);
+}
   // STRETCH - Make a helper function that returns
   // a filtered array of friends data (filtering by search term)
 
@@ -30,7 +39,7 @@ const [searchItem, setSearchItem] = useState("");
       <Search />
       {/* 👉 7- Render the FriendsList component */}
       {/* What prop/props does FriendsList need? */}
-      <FriendsList friends={friends} changeStatus = {changeStatus} />
+      <FriendsList friends={friends} changeStatus={changeStatus} />
     </div>
   )
   
