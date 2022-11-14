@@ -4,6 +4,7 @@
 import React, {useState} from 'react'
 import FriendsList from './FriendsList'
 import Search from './Search'
+import Friend from './Friend';
 // 👉 2- Import the dummy data that will power the application.
 // (Tomorrow we'll fetch the data from an API instead.)
 import friendsData, {hello} from "../dummy-data/friends";
@@ -39,7 +40,7 @@ const changeStatus = (id) => {
       <Search />
       {/* 👉 7- Render the FriendsList component */}
       {/* What prop/props does FriendsList need? */}
-      <FriendsList friends={friends} changeStatus={changeStatus} />
+      <FriendsList friends={Friends} changeStatus={changeStatus} />
     </div>
   )
   

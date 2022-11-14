@@ -1,5 +1,6 @@
 import React from 'react'
 import Friend from './Friend';
+import App from './App';
 // 👉 1- FriendsList renders several Friend components, import Friend
 
 export default function FriendsList(props) {

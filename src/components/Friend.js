@@ -1,5 +1,7 @@
 import React from 'react'
 import PetsList from './PetsList'
+import FriendsList from './FriendsList'
+import App from './App'
 
 export default function Friend(props) {
   // 👉 1- What does a Friend need?
@@ -12,13 +14,13 @@ export default function Friend(props) {
           <h3>Name: {props.friend.name}</h3>
           <p>Age: {props.friend.age}</p>
 
-          <p>Married:{props.friend.married ? 'Yes' : 'No'} <button onClick={()=>props.changeStatus[props.friend.id]}>change</button></p>
+          <p>Married:{props.friend.married ? 'Yes' : 'No'} <button onClick={() => changeStatus(props.friend.id)}>change</button></p>
           <div>Likes:
             <ul>
               {/* 👉 3- Loop over the friend's hobbies and generate <li/> elements as you go */}
 
               {props.friend.hobbies.map(
-                (like, index) => <li key={index}>{like}</li>
+                (hobby, indx) => <li key={indx}>{hobby}</li>
               )}
             </ul>
           </div>
